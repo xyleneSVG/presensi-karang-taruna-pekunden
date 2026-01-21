@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Attendance {
+  id        String   @id @default(cuid())
+  name      String
+  position  String
+  photo     String?  @db.Text
+  
+  date      Int      
+  month     String   
+  week      Int     
+  
+  createdAt DateTime @default(now())
+
+  @@index([name, createdAt])
+}
+
+model AttendanceArchive {
+  id           String   @id @default(cuid())
+  month        String   
+  year         Int      
+  fileUrl      String   @db.Text 
+  totalRecords Int      
+  createdAt    DateTime @default(now())
+}
