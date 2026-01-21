@@ -201,7 +201,7 @@ export default function AdminDashboard() {
             <p className="text-gray-500 text-xs font-bold uppercase tracking-wider relative z-10">
               Hadir Hari Ini
             </p>
-            <div className="flex items-end gap-2 mt-2 relative z-10">
+            <div className="flex flex-col md:flex-row md:items-end items-start gap-2 mt-2 relative z-10">
               <p className="text-4xl font-black text-orange-600 leading-none">
                 {stats.today}
               </p>
@@ -211,9 +211,9 @@ export default function AdminDashboard() {
           <div className="bg-white dark:bg-zinc-900 p-6 rounded-2xl border dark:border-zinc-800 shadow-sm relative overflow-hidden group">
             <div className="absolute right-0 top-0 w-24 h-24 bg-blue-500/10 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
             <p className="text-gray-500 text-xs font-bold uppercase tracking-wider relative z-10">
-              Total Karyawan
+              Total Anggota
             </p>
-            <div className="flex items-end gap-2 mt-2 relative z-10">
+            <div className="flex flex-col md:flex-row md:items-end items-start gap-2 mt-2 relative z-10">
               <p className="text-4xl font-black text-gray-900 dark:text-white leading-none">
                 {stats.totalAnggota}
               </p>
@@ -284,7 +284,7 @@ export default function AdminDashboard() {
                         <div className="flex gap-2">
                           <input
                             type="text"
-                            placeholder="Nama Karyawan..."
+                            placeholder="Nama Anggota..."
                             value={searchName}
                             onChange={(e) => setSearchName(e.target.value)}
                             className="w-full px-4 py-2 rounded-xl border bg-gray-50 dark:bg-zinc-950 dark:border-zinc-700 text-sm"
@@ -587,7 +587,7 @@ export default function AdminDashboard() {
                   <p className="text-gray-500 font-medium text-sm mb-6">
                     {(USER_DATABASE as any)[selectedUser]?.position ||
                       userHistory[0]?.position ||
-                      "Karyawan"}
+                      "Anggota"}
                   </p>
 
                   <div className="grid grid-cols-2 gap-2 text-left bg-gray-50 dark:bg-zinc-950 p-4 rounded-2xl border dark:border-zinc-800">
